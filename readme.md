@@ -1,15 +1,15 @@
 
-# Module 2 Assessment
+# Module 2 Code Challenge
 
-Welcome to your Mod 2 Assessment. You will be tested for your understanding of concepts and ability to solve problems that have been covered in class and in the curriculum.
+Welcome to your Mod 2 Code Challenge. You will be tested for your understanding of concepts and ability to solve problems that have been covered in class and in the curriculum.
 
-Use any libraries you want to solve the problems in the assessment.
+Use any libraries you want to solve the problems in the code challenge.
 
 _Read the instructions carefully_. You will be asked both to write code and respond to a few short answer questions.
 
 **Note on the short answer questions**: For the short answer questions please use your own words. The expectation is that you have not copied and pasted from an external source, even if you consult another source to help craft your response. While the short answer questions are not necessarily being assessed on grammatical correctness or sentence structure, you should do your best to communicate yourself clearly.
 
-The sections of the assessment are:
+The sections of the code challenge are:
 - Statistical Distributions
 - Statistical Tests
 - Bayesian Statistics
@@ -210,7 +210,7 @@ ans4_likelihood = "answer here"
 ```
 
 ---
-## Part 4: Linear Regression and extensions [Suggested Time: 25 min]
+## Part 4: Linear Regression [Suggested Time: 10 min]
 ---
 
 In this section, you'll be using the Advertising data, and you'll be creating linear models that are more complicated than a simple linear regression. The relevant modules have already been imported at the beginning of this notebook. We'll load and prepare the dataset for you below.
@@ -265,81 +265,4 @@ Required output: the model summary of this multiple regression model.
 
 ```python
 # Your written answer here
-```
-
-### b. Polynomial terms
-
-We'd like to add a bit of complexity to the model created in the example above, and we will do it by adding some polynomial terms. Write a function to calculate train and test error for different polynomial degrees. You'll use `scikit-learn`'s `PolynomialFeatures`.
-
-4.b.1) Create the function described above. This function should:
-* take `degree` as a parameter that will be used to create polynomial features to be used in a linear regression model
-* create a PolynomialFeatures object for each degree and fit a linear regression model using the transformed data
-* calculate the mean square error for each level of polynomial
-* return the `train_error` and `test_error` 
-
-
-```python
-def polynomial_regression(degree):
-    """
-    Calculate train and test errorfor a linear regression with polynomial features.
-    (Hint: use PolynomialFeatures)
-    
-    input: Polynomial degree
-    output: Mean squared error for train and test set
-    """
-    # // your code here //
-    
-    train_error = None
-    test_error = None
-    return train_error, test_error
-```
-
-4.b.2) Try out your new function
-
-
-
-```python
-polynomial_regression(3)
-```
-
-#### Check your answers
-
-MSE for degree 3:
-- Train: 0.2423596735839209
-- Test: 0.15281375973923944
-
-MSE for degree 4:
-- Train: 0.18179109317368244
-- Test: 1.9522597174462015
-
-4.b.3) What is the optimal number of degrees for our polynomial features in this model? In general, how does increasing the polynomial degree relate to the Bias/Variance tradeoff?  (Note that this graph shows RMSE and not MSE.)
-
-<img src ="visuals/rsme_poly_2.png" width = "600">
-
-<!---
-fig, ax = plt.subplots(figsize=(7, 7))
-degree = list(range(1, 10 + 1))
-ax.plot(degree, error_train[0:len(degree)], "-", label="Train Error")
-ax.plot(degree, error_test[0:len(degree)], "-", label="Test Error")
-ax.set_yscale("log")
-ax.set_xlabel("Polynomial Feature Degree")
-ax.set_ylabel("Root Mean Squared Error")
-ax.legend()
-ax.set_title("Relationship Between Degree and Error")
-fig.tight_layout()
-fig.savefig("visuals/rsme_poly.png",
-            dpi=150,
-            bbox_inches="tight")
---->
-
-
-```python
-# Your answer here
-```
-
-### d. In general what methods would you can use to reduce overfitting and underfitting? Provide an example for both and explain how each technique works to reduce the problems of underfitting and overfitting.
-
-
-```python
-# Your answer here
 ```
