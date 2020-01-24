@@ -1,23 +1,25 @@
 
 # Module 2 Code Challenge
 
-Welcome to your Mod 2 Code Challenge. You will be tested for your understanding of concepts and ability to solve problems that have been covered in class and in the curriculum.
+Welcome to your Module 2 Code Challenge. This code challenge is designed to test your understanding of the Module 2 material. It covers:
 
-Use any libraries you want to solve the problems in the code challenge.
-
-_Read the instructions carefully_. You will be asked both to write code and respond to a few short answer questions.
-
-**Note on the short answer questions**: For the short answer questions please use your own words. The expectation is that you have not copied and pasted from an external source, even if you consult another source to help craft your response. While the short answer questions are not necessarily being assessed on grammatical correctness or sentence structure, you should do your best to communicate yourself clearly.
-
-The sections of the code challenge are:
 - Statistical Distributions
 - Statistical Tests
 - Bayesian Statistics
-- Linear Regression and Extensions
+- Linear Regression
+
+_Read the instructions carefully_. You will be asked both to write code and respond to a few short answer questions.
+
+### Note on the short answer questions: 
+
+For the short answer questions _please use your own words_. The expectation is that you have **not** copied and pasted from an external source, even if you consult another source to help craft your response. While the short answer questions are not necessarily being assessed on grammatical correctness or sentence structure, you should do your best to communicate yourself clearly.
 
 
 ```python
-# import the necessary libraries
+# Run this cell without changes to import the necessary libraries
+
+# Use any additional libraries you like to complete this assessment 
+
 import itertools
 import numpy as np
 import pandas as pd 
@@ -41,16 +43,17 @@ from statsmodels.formula.api import ols
 ## Part 1: Statistical Distributions [Suggested time: 25 minutes]
 ---
 
-### a. Normal Distributions
+### Normal Distributions
 
 Say we have check totals for all checks ever written at a TexMex restaurant. 
 
 The distribution for this population of check totals happens to be normally distributed with a population mean of $\mu = 20$ and population standard deviation of $\sigma = 2$. 
 
-1.a.1) Write a function to compute the z-scores for single checks of amount `check_amt`.
+### 1.1) Write a function to compute the z-scores for single check of amount `check_amt`.
 
 
 ```python
+# Replace 'pass' with appropriate code
 def z_score(check_amt):
     """
     check_amt = the amount for which we want to compute the z-score
@@ -58,53 +61,59 @@ def z_score(check_amt):
     pass
 ```
 
-1.a.2) I go to the TexMex restaurant and get a check for 24 dollars. 
-
-Use your function to compute your check's z-score, and interpret the result using the empirical rule. 
+### 1.2) Use your function to compute the z-score for a 24 dollar check, and interpret the result using the empirical rule. 
 
 
 ```python
-# your code here 
+# Code here 
 ```
 
 
 ```python
-# your answer here
+"""
+Written answer here
+"""
 ```
 
-1.a.3) Using $\alpha = 0.05$, is my 25 dollar check significantly **greater** than the mean? How do you know this?  
+### 1.3) Using $\alpha = 0.05$, is the 24 dollar check significantly _greater_ than the mean? How do you know this?  
 
-Hint: Here's a link to a [z-table](https://www.math.arizona.edu/~rsims/ma464/standardnormaltable.pdf). 
+For reference, here is a link to a [z-table](https://www.math.arizona.edu/~rsims/ma464/standardnormaltable.pdf). 
 
 
 ```python
-# your code here 
-```
-
-
-```python
-# your answer here 
-```
-
-### b. Confidence Intervals and the Central Limit Theorem
-
-1.b.1) Determine the 95% confidence interval around the mean check total for this population. Interpret your result. 
-
-
-```python
-# your code here 
+# Code here 
 ```
 
 
 ```python
-# your written answer here
+"""
+Written answer here
+"""
 ```
 
-1.b.2) Imagine that we didn't know how the population of check totals was distributed. How would **sampling** and the **Central Limit Theorem** allow us to **make inferences on the population mean**, i.e. estimate $\mu, \sigma$ of the population mean?
+### Confidence Intervals and the Central Limit Theorem
+
+### 1.4) Determine the 95% confidence interval around the mean check total for this population. Interpret your result. 
 
 
 ```python
-# Your written answer here
+# Code here 
+```
+
+
+```python
+"""
+Written answer here
+"""
+```
+
+### 1.5) Imagine that we didn't know how the population of check totals was distributed. How would _sampling_ and the _Central Limit Theorem_ allow us to make inferences on the population mean, i.e. estimate $\mu, \sigma$ of the population mean?
+
+
+```python
+"""
+Written answer here
+"""
 ```
 
 ---
@@ -115,13 +124,15 @@ The TexMex restaurant recently introduced Queso to its menu.
 
 We have random samples of 1000 "No Queso" order check totals and 1000 "Queso" order check totals for orders made by different customers.
 
-In the cell below, we load the sample data for you into the arrays `no_queso` and `queso` for the "no queso" and "queso" order check totals. Then, we create histograms of the distribution of the check amounts for the "no queso" and "queso" samples. 
+In the cell below, we load the sample data for you into the arrays `no_queso` and `queso` for the "no queso" and "queso" order check totals, respectively. Then, we create histograms of the distribution of the check amounts for the "no queso" and "queso" samples. 
 
 
 ```python
+# Run this cell without changes
+
 # Load the sample data 
-no_queso = pickle.load(open("data/no_queso.pkl", "rb"))
-queso = pickle.load(open("data/queso.pkl", "rb"))
+no_queso = pickle.load(open('data/no_queso.pkl', 'rb'))
+queso = pickle.load(open('data/queso.pkl', 'rb'))
 
 # Plot histograms
 
@@ -139,44 +150,52 @@ ax2.hist(queso, bins=20)
 plt.show()
 ```
 
-### a. Hypotheses and Errors
+### Hypotheses and Errors
 
 The restaurant owners want to know if customers who order Queso spend **more or less** than customers who do not order Queso.
 
-2.a.1) Set up the null $H_{0}$ and alternative hypotheses $H_{A}$ for this test.
+### 2.1) Set up the null $H_{0}$ and alternative hypotheses $H_{A}$ for this test.
 
 
 ```python
-# Your written answer here
+"""
+Written answer here
+"""
 ```
 
-2.a.2) What does it mean to make `Type I` and `Type II` errors in this specific context?
+### 2.2) What does it mean to make `Type I` and `Type II` errors in this specific context?
 
 
 ```python
-# your answer here
+"""
+Written answer here
+"""
 ```
 
-### b. Sample Testing
+### Sample Testing
 
-2.b.1) Run a statistical test on the two samples. Use a significance level of $\alpha = 0.05$. You can assume the two samples have equal variance. Can you reject the null hypothesis? 
+### 2.3) Run a statistical test on the two samples. Can you reject the null hypothesis? 
 
-_Hint: Use `scipy.stats`._
+Use a significance level of $\alpha = 0.05$. You can assume the two samples have equal variance.
+
+You can use `scipy.stats` to find the answer if you like.
 
 
 ```python
-# your code here 
+# Code here 
 ```
 
 
 ```python
-# your answer here
+"""
+Written answer here
+"""
 ```
 
 ---
 ## Part 3: Bayesian Statistics [Suggested time: 15 minutes]
 ---
-### a. Bayes' Theorem
+### Bayes' Theorem
 
 Thomas wants to get a new puppy 🐕 🐶 🐩 
 
@@ -191,22 +210,38 @@ If he goes to the pet store, the probability of him getting a small puppy is $0.
 
 If he goes to the pound, the probability of him getting a small puppy is $0.1$. The probability of him getting a medium puppy is $0.35$, and the probability of him getting a large puppy is $0.55$.
 
-3.a.1) What is the probability of Thomas getting a small puppy? 
-
-3.a.2) Given that he got a large puppy, what is the probability that Thomas went to the pet store?
-
-3.a.3) Given that Thomas got a small puppy, is it more likely that he went to the pet store or to the pound?
-
-3.a.4) For Part 2, what is the prior, posterior and likelihood?
+### 3.1) What is the probability of Thomas getting a small puppy?
 
 
 ```python
-ans1 = None
-ans2 = None
-ans3 = "answer here"
-ans4_prior = "answer here"
-ans4_posterior = "answer here"
-ans4_likelihood = "answer here"
+# Code here to find the probability
+```
+
+### 3.2) Given that he got a large puppy, what is the probability that Thomas went to the pet store?
+
+
+```python
+# Code here to find the probability
+```
+
+### 3.3) Given that Thomas got a small puppy, is it more likely that he went to the pet store or to the pound?
+
+
+```python
+"""
+Written answer here for which is more likely
+"""
+```
+
+### 3.4) For Question 3.2, what are the prior, posterior, and likelihood?
+
+
+```python
+"""
+Written answer here for the prior
+Written answer here for the posterior
+Written answer here for the likelihood
+"""
 ```
 
 ---
@@ -217,52 +252,58 @@ In this section, you'll be using the Advertising data, and you'll be creating li
 
 
 ```python
-data = pd.read_csv('data/advertising.csv').drop('Unnamed: 0',axis=1)
+# Run this cell without changes
+
+data = pd.read_csv('data/advertising.csv').drop('Unnamed: 0', axis=1)
 data.describe()
 ```
 
 
 ```python
+# Run this cell without changes
+
 X = data.drop('sales', axis=1)
 y = data['sales']
+
+# Split the data into training and test sets 
+# Do not change the random state please!
+X_train , X_test, y_train, y_test = train_test_split(X, y, random_state=2019)
 ```
+
+In the linear regression section of the curriculum, you analyzed how TV, Radio, and Newspaper spendings individually affected the Sales figures. Here, we'll use all three together in a multiple linear regression model!
+
+### 4.1) Create a Correlation Matrix for `X`.
 
 
 ```python
-# split the data into training and testing set. Do not change the random state please!
-X_train , X_test, y_train, y_test = train_test_split(X, y,random_state=2019)
+# Code here 
 ```
 
-### a. Multiple Linear Regression
-
-In the linear regression section of the curriculum, you've analyzed how TV, Radio and Newspaper spendings individually affected the Sales figures. Here, we'll use all three together in a multiple linear regression model!
-
-4.a.1) Create a Correlation Matrix for `X`.
+### 4.2) Based on this correlation matrix only, would you recommend to use `TV`, `radio`, and `newspaper` in the same multiple linear regression model?
 
 
 ```python
-# your code here 
+"""
+Written answer here
+"""
 ```
 
-4.a.2) Based on this correlation matrix only, would you recommend to use `TV`, `radio` and `newspaper` in the same multiple linear regression model?
+### 4.3) Use StatsModels' `ols`-function to create a multiple linear regression model with `TV`, `radio`, and `newspaper` as independent variables and sales as the dependent variable. 
+
+Be sure to use **only the training set** to create the model.
+
+**Required output:** the model summary of this multiple regression model.
 
 
 ```python
-# Your written answer here
+# Code here 
 ```
 
-4.a.3) Use StatsModels' `ols`-function to create a multiple linear regression model with `TV`, `radio` and `newspaper` as independent variables and sales as the dependent variable. Use the **training set only** to create the model.
-
-Required output: the model summary of this multiple regression model.
+### 4.4) Do we have any statistically significant coefficients? If the answer is yes, list them below.
 
 
 ```python
-# your code here 
-```
-
-4.a.4) Do we have any statistically significant coefficients? If the answer is yes, list them below.
-
-
-```python
-# Your written answer here
+"""
+Written answer here
+"""
 ```
