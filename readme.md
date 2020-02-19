@@ -1,3 +1,4 @@
+
 # Module 2 Code Challenge
 
 Welcome to your Module 2 Code Challenge. This code challenge is designed to test your understanding of the Module 2 material. It covers:
@@ -52,7 +53,7 @@ The distribution for this population of check totals happens to be normally dist
 
 
 ```python
-# Replace `pass` with appropriate code
+# Replace 'pass' with appropriate code
 def z_score(check_amt):
     """
     check_amt = the amount for which we want to compute the z-score
@@ -119,9 +120,9 @@ Written answer here
 ## Part 2: Statistical Testing [Suggested time: 15 minutes]
 ---
 
-The TexMex restaurant recently introduced queso to its menu.
+The TexMex restaurant recently introduced Queso to its menu.
 
-We have random samples of 1000 "no queso" order check totals and 1000 "queso" order check totals for orders made by different customers.
+We have random samples of 1000 "No Queso" order check totals and 1000 "Queso" order check totals for orders made by different customers.
 
 In the cell below, we load the sample data for you into the arrays `no_queso` and `queso` for the "no queso" and "queso" order check totals, respectively. Then, we create histograms of the distribution of the check amounts for the "no queso" and "queso" samples. 
 
@@ -151,7 +152,7 @@ plt.show()
 
 ### Hypotheses and Errors
 
-The restaurant owners want to know if customers who order queso spend **more or less** than customers who do not order queso.
+The restaurant owners want to know if customers who order Queso spend **more or less** than customers who do not order Queso.
 
 ### 2.1) Set up the null $H_{0}$ and alternative hypotheses $H_{A}$ for this test.
 
@@ -177,7 +178,7 @@ Written answer here
 
 Use a significance level of $\alpha = 0.05$. You can assume the two samples have equal variance.
 
-You can use `scipy.stats` to find the answer if you like.  It has already been imported as `stats` and the statistical testing documentation can be found [here](https://docs.scipy.org/doc/scipy/reference/stats.html#statistical-tests).
+You can use `scipy.stats` to find the answer if you like.
 
 
 ```python
@@ -210,7 +211,6 @@ If he goes to the pet store, the probability of him getting a small puppy is $0.
 If he goes to the pound, the probability of him getting a small puppy is $0.1$. The probability of him getting a medium puppy is $0.35$, and the probability of him getting a large puppy is $0.55$.
 
 ### 3.1) What is the probability of Thomas getting a small puppy?
-Show your work, not just the final result
 
 
 ```python
@@ -218,7 +218,6 @@ Show your work, not just the final result
 ```
 
 ### 3.2) Given that he got a large puppy, what is the probability that Thomas went to the pet store?
-Show your work, not just the final result
 
 
 ```python
@@ -226,7 +225,6 @@ Show your work, not just the final result
 ```
 
 ### 3.3) Given that Thomas got a small puppy, is it more likely that he went to the pet store or to the pound?
-Show your work, not just the final result
 
 
 ```python
@@ -266,6 +264,10 @@ data.describe()
 
 X = data.drop('sales', axis=1)
 y = data['sales']
+
+# Split the data into training and test sets 
+# Do not change the random state please!
+X_train , X_test, y_train, y_test = train_test_split(X, y, random_state=2019)
 ```
 
 In the linear regression section of the curriculum, you analyzed how TV, Radio, and Newspaper spendings individually affected the Sales figures. Here, we'll use all three together in a multiple linear regression model!
@@ -286,7 +288,9 @@ Written answer here
 """
 ```
 
-### 4.3) Use StatsModels' `ols`-function to create a multiple linear regression model with `TV`, `radio`, and `newspaper` as independent variables and `sales` as the dependent variable. 
+### 4.3) Use StatsModels' `ols`-function to create a multiple linear regression model with `TV`, `radio`, and `newspaper` as independent variables and sales as the dependent variable. 
+
+Be sure to use **only the training set** to create the model.
 
 **Required output:** the model summary of this multiple regression model.
 
