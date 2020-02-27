@@ -204,7 +204,7 @@ Thomas wants to get a new puppy 🐕 🐶 🐩
 
 He can choose to get his new puppy either from the pet store or the pound. The probability of him going to the pet store is $0.2$. 
 
-He can choose to get either a big, medium or small puppy.
+He can choose to get either a large, medium or small puppy.
 
 If he goes to the pet store, the probability of him getting a small puppy is $0.6$. The probability of him getting a medium puppy is $0.3$, and the probability of him getting a large puppy is $0.1$.
 
