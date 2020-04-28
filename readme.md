@@ -40,33 +40,23 @@ from statsmodels.formula.api import ols
 ```
 
 ---
-## Part 1: Statistical Distributions [Suggested time: 25 minutes]
+## Part 1: Statistical Distributions [Suggested time: 20 minutes]
 ---
 
 ### Normal Distributions
 
-Say we have check totals for all checks ever written at a TexMex restaurant. 
+Let's consider check totals at a TexMex restaurant. We know that the population distribution of check totals is normally distributed with a mean of $\mu$ = \\$20 and standard deviation of $\sigma$ = \\$3. 
 
-The distribution for this population of check totals happens to be normally distributed with a population mean of $\mu = 20$ and population standard deviation of $\sigma = 2$. 
-
-### 1.1) Write a function to compute the z-scores for single check of amount `check_amt`.
-
-
-```python
-# Replace `pass` with appropriate code
-def z_score(check_amt):
-    """
-    check_amt = the amount for which we want to compute the z-score
-    """
-    pass
-```
-
-### 1.2) Use your function to compute the z-score for a 24 dollar check, and interpret the result using the empirical rule. 
+### 1.1) Compute the z-score for a \\$26 check. 
 
 
 ```python
 # Code here 
 ```
+
+### 1.2) Approximately what percentage of all checks are less than \\$26? Explain how you came to your answer.
+
+You can answer this using the empirical rule or this [z-table](https://www.math.arizona.edu/~rsims/ma464/standardnormaltable.pdf).
 
 
 ```python
@@ -75,39 +65,16 @@ Written answer here
 """
 ```
 
-### 1.3) Using $\alpha = 0.05$, is the 24 dollar check significantly _greater_ than the mean? How do you know this?  
+### Confidence Intervals
 
-For reference, here is a link to a [z-table](https://www.math.arizona.edu/~rsims/ma464/standardnormaltable.pdf). 
+One night, a waiter gets 15 checks with a mean of \\$19 and a standard deviation of \\$3.
 
-
-```python
-# Code here 
-```
-
-
-```python
-"""
-Written answer here
-"""
-```
-
-### Confidence Intervals and the Central Limit Theorem
-
-### 1.4) Determine the 95% confidence interval around the mean check total for this population. Interpret your result. 
+### 1.3) Calculate the 95% confidence interval around the mean for this waitor's checks. Interpret the result. 
 
 
 ```python
 # Code here 
 ```
-
-
-```python
-"""
-Written answer here
-"""
-```
-
-### 1.5) Imagine that we didn't know how the population of check totals was distributed. How would _sampling_ and the _Central Limit Theorem_ allow us to make inferences on the population mean, i.e. estimate $\mu, \sigma$ of the population mean?
 
 
 ```python
@@ -117,7 +84,7 @@ Written answer here
 ```
 
 ---
-## Part 2: Statistical Testing [Suggested time: 15 minutes]
+## Part 2: Statistical Testing [Suggested time: 20 minutes]
 ---
 
 The TexMex restaurant recently introduced queso to its menu.
@@ -163,7 +130,7 @@ Written answer here
 """
 ```
 
-### 2.2) What does it mean to make `Type I` and `Type II` errors in this specific context?
+### 2.2) What does it mean to make a `Type I` error or a `Type II` error in this specific context?
 
 
 ```python
@@ -197,61 +164,22 @@ Written answer here
 ---
 ### Bayes' Theorem
 
-Thomas wants to get a new puppy 🐕 🐶 🐩 
+A medical test is designed to diagnose a certain disease. The test has a false positive rate of 10%, meaning that 10% of people without the disease will get a positive test result. The test has a false negative rate of 2%, meaning that 2% of people with the disease will get a negative result. Only 1% of the population has this disease.
 
-
-<img src="https://media.giphy.com/media/rD8R00QOKwfxC/giphy.gif" />
-
-He can choose to get his new puppy either from the pet store or the pound. The probability of him going to the pet store is $0.2$. 
-
-He can choose to get either a large, medium or small puppy.
-
-If he goes to the pet store, the probability of him getting a small puppy is $0.6$. The probability of him getting a medium puppy is $0.3$, and the probability of him getting a large puppy is $0.1$.
-
-If he goes to the pound, the probability of him getting a small puppy is $0.1$. The probability of him getting a medium puppy is $0.35$, and the probability of him getting a large puppy is $0.55$.
-
-### 3.1) What is the probability of Thomas getting a small puppy?
-Show your work, not just the final result
+### 3.1) If a patient receives a positive test result, what is the probability that they actually have the disease? Show how you arrive at your answer.
 
 
 ```python
 # Code here to find the probability
 ```
 
-### 3.2) Given that he got a large puppy, what is the probability that Thomas went to the pet store?
-Show your work, not just the final result
-
-
-```python
-# Code here to find the probability
-```
-
-### 3.3) Given that Thomas got a small puppy, is it more likely that he went to the pet store or to the pound?
-Show your work, not just the final result
-
-
-```python
-"""
-Written answer here for which is more likely
-"""
-```
-
-### 3.4) For Question 3.2, what are the prior, posterior, and likelihood?
-
-
-```python
-"""
-Written answer here for the prior
-Written answer here for the posterior
-Written answer here for the likelihood
-"""
-```
-
 ---
-## Part 4: Linear Regression [Suggested Time: 10 min]
+## Part 4: Linear Regression [Suggested Time: 20 min]
 ---
 
-In this section, you'll be using the Advertising data, and you'll be creating linear models that are more complicated than a simple linear regression. The relevant modules have already been imported at the beginning of this notebook. We'll load and prepare the dataset for you below.
+In this section, you'll be using the Advertising data to run regression models. In this dataset, each row represents a different product, and we have a sample of 200 products from a larger population of products. We have three features - `TV`, `radio`, and `newspaper` - that describe how many thousands of advertising dollars were spent promoting the product. The target, `sales`, describes how many millions of dollars in sales the product had.
+
+The relevant modules have already been imported at the beginning of this notebook. We'll load and prepare the dataset for you below.
 
 
 ```python
@@ -262,6 +190,96 @@ data.describe()
 ```
 
 
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>TV</th>
+      <th>radio</th>
+      <th>newspaper</th>
+      <th>sales</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>200.000000</td>
+      <td>200.000000</td>
+      <td>200.000000</td>
+      <td>200.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>147.042500</td>
+      <td>23.264000</td>
+      <td>30.554000</td>
+      <td>14.022500</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>85.854236</td>
+      <td>14.846809</td>
+      <td>21.778621</td>
+      <td>5.217457</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>0.700000</td>
+      <td>0.000000</td>
+      <td>0.300000</td>
+      <td>1.600000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>74.375000</td>
+      <td>9.975000</td>
+      <td>12.750000</td>
+      <td>10.375000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>149.750000</td>
+      <td>22.900000</td>
+      <td>25.750000</td>
+      <td>12.900000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>218.825000</td>
+      <td>36.525000</td>
+      <td>45.100000</td>
+      <td>17.400000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>296.400000</td>
+      <td>49.600000</td>
+      <td>114.000000</td>
+      <td>27.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
 ```python
 # Run this cell without changes
 
@@ -269,16 +287,18 @@ X = data.drop('sales', axis=1)
 y = data['sales']
 ```
 
-In the linear regression section of the curriculum, you analyzed how TV, Radio, and Newspaper spendings individually affected the Sales figures. Here, we'll use all three together in a multiple linear regression model!
+### Simple Linear Regression
 
-### 4.1) Create a Correlation Matrix for `X`.
+### 4.1) Use StatsModels' `ols`-function to run a linear regression model using `TV` to predict `sales`. 
+
+**Required output:** the summary of this regression model.
 
 
 ```python
 # Code here 
 ```
 
-### 4.2) Based on this correlation matrix only, would you recommend to use `TV`, `radio`, and `newspaper` in the same multiple linear regression model?
+### 4.2) Do these results imply that _all_ products that receive more TV advertising have greater sales? Explain how you determined this based on the model output. 
 
 
 ```python
@@ -287,16 +307,32 @@ Written answer here
 """
 ```
 
-### 4.3) Use StatsModels' `ols`-function to create a multiple linear regression model with `TV`, `radio`, and `newspaper` as independent variables and `sales` as the dependent variable. 
+### Multiple Linear Regression
 
-**Required output:** the model summary of this multiple regression model.
+### 4.3) Compute a correlation matrix for `X`. Does this suggest that any of the features are strongly collinear? 
 
 
 ```python
 # Code here 
 ```
 
-### 4.4) Do we have any statistically significant coefficients? If the answer is yes, list them below.
+
+```python
+"""
+Written answer here
+"""
+```
+
+### 4.4) Use StatsModels' `ols`-function to run a multiple linear regression model with `TV`, `radio`, and `newspaper` as independent variables and `sales` as the dependent variable. 
+
+**Required output:** the summary of this regression model.
+
+
+```python
+# Code here 
+```
+
+### 4.5) Does this model do a better job of predicting sales than the previous model using only the `TV` feature? Explain how you determined this based on the model output. 
 
 
 ```python
