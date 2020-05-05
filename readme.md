@@ -30,11 +30,6 @@ import seaborn as sns
 
 import pickle
 
-from sklearn.metrics import mean_squared_error, roc_curve, roc_auc_score, accuracy_score
-from sklearn.linear_model import LinearRegression
-from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import PolynomialFeatures
-from sklearn.preprocessing import StandardScaler
 import statsmodels.api as sm
 from statsmodels.formula.api import ols
 ```
