@@ -161,11 +161,45 @@ Written answer here
 
 A medical test is designed to diagnose a certain disease. The test has a false positive rate of 10%, meaning that 10% of people without the disease will get a positive test result. The test has a false negative rate of 2%, meaning that 2% of people with the disease will get a negative result. Only 1% of the population has this disease.
 
-### 3.1) If a patient receives a positive test result, what is the probability that they actually have the disease? Show how you arrive at your answer.
+### 3.1) What is the probability of receiving a positive test result? Show how you arrive at your answer.
+
+Assume that the person being tested is randomly selected from the broader population. You can show your work using text, code, or both.
 
 
 ```python
-# Code here to find the probability
+"""
+Written answer with probability notation here
+"""
+```
+
+
+```python
+# Code to calculate the probability here
+```
+
+
+```python
+p_pos = 0.98*0.01 + 0.10*0.99
+print(p_pos)
+```
+
+    0.10880000000000001
+
+
+### 3.2) If a patient receives a positive test result, what is the probability that they actually have the disease? Show how you arrive at your answer.
+
+Hint: Use your answer to the previous question to answer this one. You can show your work using text, code, or both.
+
+
+```python
+"""
+Written answer with probability notation here
+"""
+```
+
+
+```python
+# Code to calculate the probability here
 ```
 
 ---
@@ -293,7 +327,9 @@ y = data['sales']
 # Code here 
 ```
 
-### 4.2) Do these results imply that _all_ products that receive more TV advertising have greater sales? Explain how you determined this based on the model output. 
+### 4.2) Do these results imply that products that receive more TV advertising have greater sales? Explain how you determined this based on the model output. 
+
+This question is asking you to use your findings from the sample in your dataset to make an inference about the relationship between TV advertising spend and sales in the broader population.
 
 
 ```python
@@ -304,7 +340,7 @@ Written answer here
 
 ### Multiple Linear Regression
 
-### 4.3) Compute a correlation matrix for `X`. Does this suggest that any of the features are strongly collinear? 
+### 4.3) Compute a correlation matrix for `X`. Given these correlation coefficients, would there be any issue if you included all of these features in one regression model? 
 
 
 ```python
@@ -327,7 +363,7 @@ Written answer here
 # Code here 
 ```
 
-### 4.5) Does this model do a better job of predicting sales than the previous model using only the `TV` feature? Explain how you determined this based on the model output. 
+### 4.5) Does this model do a better job of explaining sales than the previous model using only the `TV` feature? Explain how you determined this based on the model output. 
 
 
 ```python
