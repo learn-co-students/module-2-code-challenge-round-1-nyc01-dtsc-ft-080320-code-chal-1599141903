@@ -62,9 +62,9 @@ Written answer here
 
 ### Confidence Intervals
 
-One night, a waiter gets 15 checks with a mean of \\$19 and a standard deviation of \\$3.
+One night, a waiter gets 15 checks with a mean amount of \\$19 and a standard deviation of \\$3.
 
-### 1.3) Calculate the 95% confidence interval around the mean for this waitor's checks. Interpret the result. 
+### 1.3) Use this sample to calculate a 95% confidence interval for the mean of this waiter's check amounts. Interpret the result. 
 
 
 ```python
@@ -327,7 +327,7 @@ y = data['sales']
 # Code here 
 ```
 
-### 4.2) Do these results imply that products that receive more TV advertising have greater sales? Explain how you determined this based on the model output. 
+### 4.2) Can we infer that products with higher TV advertising spend tend to have greater sales? Explain how you determined this from the model output. 
 
 This question is asking you to use your findings from the sample in your dataset to make an inference about the relationship between TV advertising spend and sales in the broader population.
 
