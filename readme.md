@@ -62,7 +62,7 @@ Written answer here
 
 ### Confidence Intervals
 
-One night, a waiter gets 15 checks with a mean amount of \\$19 and a standard deviation of \\$3.
+One month, a waiter gets 500 checks with a mean amount of \\$19 and a standard deviation of \\$3.
 
 ### 1.3) Use this sample to calculate a 95% confidence interval for the mean of this waiter's check amounts. Interpret the result. 
 
