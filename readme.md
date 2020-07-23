@@ -177,15 +177,6 @@ Written answer with probability notation here
 # Code to calculate the probability here
 ```
 
-
-```python
-p_pos = 0.98*0.01 + 0.10*0.99
-print(p_pos)
-```
-
-    0.10880000000000001
-
-
 ### 3.2) If a patient receives a positive test result, what is the probability that they actually have the disease? Show how you arrive at your answer.
 
 Hint: Use your answer to the previous question to answer this one. You can show your work using text, code, or both.
